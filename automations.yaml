@@ -1,0 +1,52 @@
+- id: '1708704819974'
+  alias: HAOS Updates
+  description: ''
+  use_blueprint:
+    path: mdegat01/update_notifications.yaml
+    input:
+      update_entities:
+      - update.home_assistant_core_update
+      - update.hacs_update
+      - update.home_assistant_operating_system_update
+      - update.home_assistant_supervisor_update
+      mobile_app_device: 4838632080fb3f4378fa7ade63dfa751
+      only_after: 09:00:00
+      only_before: '23:00:00'
+      mobile_app_device_2: abb6ec8d7572cd568e6367e65a3c2dab
+      reminder_hours: '12'
+- id: '1741032240808'
+  alias: Turn on Cinderella Off Peak Charging
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - schedule.weekly_power_time_of_use_on
+    attribute: next_event
+  conditions:
+  - condition: state
+    entity_id: switch.cinderella_off_peak_charging
+    state: 'off'
+  actions:
+  - type: turn_on
+    device_id: d663068b0716260b488d1580a6fcf502
+    entity_id: b206673e06cd8dbf96167f47053a288e
+    domain: switch
+  mode: single
+- id: '1741032379277'
+  alias: Turn off Cinderella Off Peak Charging
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - schedule.weekly_power_time_of_use_off
+    attribute: next_event
+  conditions:
+  - condition: state
+    entity_id: switch.cinderella_off_peak_charging
+    state: 'on'
+  actions:
+  - type: turn_off
+    device_id: d663068b0716260b488d1580a6fcf502
+    entity_id: b206673e06cd8dbf96167f47053a288e
+    domain: switch
+  mode: single

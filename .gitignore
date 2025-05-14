@@ -1,0 +1,17 @@
+# Ignore everything by default
+*
+
+# Whitelist these files
+!*.yaml
+!.gitignore
+!*.md
+!automations
+
+# Ignored Folders
+.cloud
+.storage
+
+# Ignored Files
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
