@@ -1,17 +1,34 @@
 # Ignore everything by default
-*
+#*
+
+# Generic Ignore
+*.log
+*.log.*
+*.db
+*.db-shm
+*.db-wal
+.*
+
+# Ingnore Built-In Blueprints
+blueprints/*/homeassistant
 
 # Whitelist these files
 !*.yaml
 !.gitignore
 !*.md
-!automations
+!/.HA_VERSION
+!.github
 
 # Ignored Folders
 .cloud
 .storage
+.google.token
 
 # Ignored Files
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
+
+# Ignore community stuff
+custom_components
+www/community
