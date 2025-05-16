@@ -29,3 +29,7 @@ known_devices.yaml
 # Ignore community stuff
 custom_components
 www/community
+
+# Ignore community stuff
+custom_components
+www/community
